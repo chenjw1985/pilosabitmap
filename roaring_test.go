@@ -25,7 +25,7 @@ import (
 	"testing/quick"
 	"time"
 
-	"git.liveramp.net/select-product/go-common/roaring"
+	"git.liveramp.net/select-product/roaring"
 )
 
 // ShardWidth is the number of column IDs in a shard.
