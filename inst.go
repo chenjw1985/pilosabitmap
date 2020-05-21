@@ -12,11 +12,30 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// +build !roaringstats
+// +build btreeInstrumentation
 
 package roaring
 
-// statsCount does nothing, because you aren't building with
-// the "roaringstats" build tag.
-func statsHit(string) {
+type dTree struct {
+	t *tree
+}
+
+type treeInst struct {
+	deCopied int64
+}
+
+func (t *tree) didCopy(n int) {
+	t.deCopied += int64(n)
+}
+
+func (d *d) didCopy(n int) {
+	d.t.deCopied += int64(n)
+}
+
+func (t *tree) countCopies() int64 {
+	return t.deCopied
+}
+
+func (d *d) setTree(t *tree) {
+	d.t = t
 }

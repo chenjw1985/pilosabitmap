@@ -2,6 +2,8 @@
 
 package roaring
 
+import "fmt"
+
 // "github.com/pilosa/pilosa/stats"
 
 // var statsEv = stats.NewExpvarStatsClient()
@@ -10,4 +12,5 @@ package roaring
 // that particular event.
 func statsHit(name string) {
 	// statsEv.Count(name, 1, 1)
+	fmt.Println(name)
 }
