@@ -12,11 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// +build !roaringstats
+// +build !roaringparanoia
 
 package roaring
 
-// statsCount does nothing, because you aren't building with
-// the "roaringstats" build tag.
-func statsHit(string) {
-}
+const roaringParanoia = false
