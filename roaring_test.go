@@ -20,11 +20,12 @@ import (
 	"math"
 	"math/rand"
 	"reflect"
-	"roaring"
 	"sort"
 	"testing"
 	"testing/quick"
 	"time"
+
+	"roaring"
 )
 
 // ShardWidth is the number of column IDs in a shard.
