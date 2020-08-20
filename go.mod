@@ -1,4 +1,4 @@
-module github.com/davidchen-cn/roaring
+module roaring
 
 go 1.12
 
