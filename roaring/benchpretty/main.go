@@ -12,7 +12,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/chenjw1985/pilosabitmap"
+	"github.com/chenjw1985/pilosabitmap/roaring"
 )
 
 var pattern = regexp.MustCompile(`^BenchmarkCtOps/([^/]+)/([^/]+)/([^-]+)-([0-9]+)\s*([0-9]+)\s*([0-9.]+) ns/op`)
