@@ -46,7 +46,7 @@ func randomArray(arr *[4096]uint16, mask *[1024]uint64, seed uint64) []uint16 {
 	for i, v := range mask {
 		for v != 0 {
 			j := bits.TrailingZeros64(v)
-			v &^= 1 << j
+			v &^= 1 << uint(j)
 			x = append(x, 64*uint16(i)+uint16(j))
 		}
 	}
@@ -70,12 +70,12 @@ func diffMask(t *testing.T, in string, expect, got *[1024]uint64) bool {
 		unexpected, missing := gotv&^expv, expv&^gotv
 		for unexpected != 0 {
 			j := bits.TrailingZeros64(unexpected)
-			unexpected &^= 1 << j
+			unexpected &^= 1 << uint(j)
 			t.Errorf("unexpected value %d in %s", 64*i+j, in)
 		}
 		for missing != 0 {
 			j := bits.TrailingZeros64(missing)
-			missing &^= 1 << j
+			missing &^= 1 << uint(j)
 			t.Errorf("missing value %d in %s", 64*i+j, in)
 		}
 		n += bits.OnesCount64(unexpected | missing)
@@ -354,7 +354,7 @@ func TestAdd(t *testing.T) {
 				expectSums[k] = v
 				for v != 0 {
 					i := bits.TrailingZeros64(v)
-					v &^= 1 << i
+					v &^= 1 << uint(i)
 					for len(x) <= i {
 						x = append(x, NewBitmap())
 					}
@@ -369,7 +369,7 @@ func TestAdd(t *testing.T) {
 				expectSums[k] += v
 				for v != 0 {
 					i := bits.TrailingZeros64(v)
-					v &^= 1 << i
+					v &^= 1 << uint(i)
 					for len(y) <= i {
 						y = append(y, NewBitmap())
 					}
@@ -380,7 +380,7 @@ func TestAdd(t *testing.T) {
 			sumsBSI := Add(x, y)
 			gotSums := make(map[uint64]uint64, len(expectSums))
 			for i, b := range sumsBSI {
-				mask := uint64(1) << i
+				mask := uint64(1) << uint(i)
 				for _, k := range b.Slice() {
 					gotSums[k] |= mask
 				}
