@@ -10,7 +10,7 @@ import (
 	"sync"
 	"testing"
 
-	"roaring/shardwidth"
+	"github.com/chenjw1985/pilosabitmap/mocks/shardwidth"
 )
 
 // For each container key i from 1 to (shard width in containers), we

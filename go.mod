@@ -1,6 +1,6 @@
 module github.com/chenjw1985/pilosabitmap
 
-go 1.12
+go 1.13
 
 require (
 	github.com/molecula/apophenia v0.0.0-20190827192002-68b7a14a478b // indirect

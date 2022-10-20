@@ -15,7 +15,7 @@ import (
 	"github.com/chenjw1985/pilosabitmap/mocks/generator"
 	"github.com/chenjw1985/pilosabitmap/mocks/pilosa"
 	"github.com/chenjw1985/pilosabitmap/roaring"
-	_ "github.com/featurebasedb/featurebase/v3/test"
+	//_ "github.com/featurebasedb/featurebase/v3/test"
 )
 
 func TestContainerCount(t *testing.T) {

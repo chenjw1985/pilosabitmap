@@ -6,9 +6,8 @@ import (
 	"fmt"
 	"math"
 
+	"github.com/chenjw1985/pilosabitmap/mocks/shardwidth"
 	"github.com/pkg/errors"
-
-	"roaring/shardwidth"
 )
 
 // We want BitmapScanner to be accessible from both the pilosa package, and

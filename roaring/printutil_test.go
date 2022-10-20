@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"testing"
 
-	"roaring/shardwidth"
+	"github.com/chenjw1985/pilosabitmap/mocks/shardwidth"
 )
 
 func TestAsContainerMatrixString(t *testing.T) {

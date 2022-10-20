@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"math"
 
-	"roaring/shardwidth"
+	"github.com/chenjw1985/pilosabitmap/mocks/shardwidth"
 )
 
 func (b *Bitmap) String() (r string) {
